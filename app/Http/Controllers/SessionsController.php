@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Auth;
 class SessionsController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+
+        // 限流 10 分钟十次
+        $this->middleware('throttle:10,10', [
+            'only' => ['store']
+        ]);
+    }
+
     public function create()
     {
         return view('sessions.create');
