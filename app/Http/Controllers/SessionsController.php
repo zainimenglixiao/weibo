@@ -18,6 +18,7 @@ class SessionsController extends Controller
         $this->middleware('throttle:10,10', [
             'only' => ['store']
         ]);
+
     }
 
     public function create()
@@ -55,10 +56,4 @@ class SessionsController extends Controller
         return redirect('login');
     }
 
-    public function __construct()
-    {
-        $this->middleware('guest', [
-            'only' => ['create']
-        ]);
-    }
 }
