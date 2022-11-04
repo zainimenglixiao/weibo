@@ -105,5 +105,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->followings->contains($user_id);
     }
+
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }
 
