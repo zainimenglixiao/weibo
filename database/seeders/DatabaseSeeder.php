@@ -1,21 +1,14 @@
 <?php
 
-namespace  Database\Seeders;
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        Model::unguard();
-
         $this->call(UsersTableSeeder::class);
-		$this->call(TopicsTableSeeder::class);
-        $this->call(StatusesTableSeeder::class);
-        $this->call(FollowersTableSeeder::class);
-
-        Model::reguard();
+        $this->call(TopicsTableSeeder::class);
     }
 }
