@@ -1,106 +1,58 @@
+// Variables
+@import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+/* universal */
+
 body {
-    font-size: 14px;
-    font-weight: normal;
+  font-family: Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
 }
 
-nav.navbar.navbar-expand-lg {
-    margin-bottom: 20px;
+/* header */
+
+.navbar-static-top {
+  border-color: #e7e7e7;
+  background-color: #fff;
+  box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
+  border-top: 4px solid #00b5ad;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 40px;
+  margin-top: 0px;
 }
 
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-  font-size: 13px;
-  font-weight: bold;
-
-  a {
-    color: #555;
-  }
-
-  a:hover {
-    color: #222;
-  }
-
-  img.brand-icon {
-    width: 17px;
-    height: 17px;
-  }
+/* Sticky footer styles */
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-/* User gravatar */
-
-section.user_info {
-  padding-bottom: 10px;
-  margin-top: 20px;
-  text-align: center;
-  .gravatar {
-    float: none;
-    max-width: 70px;
-  }
-  h1 {
-    font-size: 1.4em;
-    letter-spacing: -1px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-  }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
-.gravatar {
-  float: left;
-  max-width: 50px;
-  border-radius: 50%;
-}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #000;
 
-/* Users edit */
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
 
-.gravatar_edit {
-  margin: 15px auto;
-  text-align: center;
-  .gravatar {
-    float: none;
-    max-width: 100px;
-  }
-}
+    p {
+      margin: 19px 0;
+      color: #c1c1c1;
 
-/* Status */
-
-.status-delete-btn {
-  width: max-content;
-}
-
-.stats {
-  overflow: auto;
-  margin-top: 0;
-  padding: 0;
-  a {
-    float: left;
-    padding: 0 10px;
-    text-align: center;
-    width: 33%;
-    border-left: 1px solid #eee;
-    color: #33383c;
-    text-decoration: none;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
+      a {
+        color: inherit;
+      }
     }
-    &:hover {
-      text-decoration: none;
-      color: #337ab7;
-    }
-  }
-  strong {
-    display: block;
-    font-size: 1.2em;
-    color: black;
   }
 }
