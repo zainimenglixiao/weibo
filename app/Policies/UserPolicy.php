@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use Illuminate\Auth\Access\HandlesAuthorization;
 use App\Models\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
 {
@@ -13,15 +13,4 @@ class UserPolicy
     {
         return $currentUser->id === $user->id;
     }
-
-    public function destroy(User $currentUser, User $user)
-    {
-        return $currentUser->is_admin && $currentUser->id !== $user->id;
-    }
-
-    public function follow(User $currentUser, User $user)
-    {
-        return $currentUser->id !== $user->id;
-    }
 }
-
