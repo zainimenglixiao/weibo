@@ -12,16 +12,6 @@ use App\Models\User;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -32,5 +22,12 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
         \Illuminate\Pagination\Paginator::useBootstrap();
+    }
+
+    public function register()
+    {
+        if (app()->isLocal()) {
+            $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
+        }
     }
 }
