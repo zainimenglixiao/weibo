@@ -112,11 +112,8 @@ body {
 #app > div.container {
   margin-bottom: 100px;
 }
-/* Topic Show Page */
-
-@import "topic_body";
-
-.topics-show-page {
+/* Topic Index Page */
+.topics-index-page, .categories-show-page {
 
     .card {
         padding: 15px;
